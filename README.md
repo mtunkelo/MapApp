@@ -9,9 +9,9 @@ php artisan key:generate
 
 Set db connections
 
-Run:
+#Run:
 php artisan migrate
 php artisan db:seed
 
-Then just serve:
+#Then just serve:
 php artisan serve
