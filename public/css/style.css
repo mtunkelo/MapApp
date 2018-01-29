@@ -1,0 +1,45 @@
+label {
+	display: block;
+	margin: 5px 0;
+}
+
+h1 {
+	text-transform: uppercase;
+
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 5px;
+	border-bottom: 1px solid #aaa;
+}
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+	height: 50%;
+	margin-bottom: 20px;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background-color: rgb(238, 238, 238);
+}
+
+button{
+	float:right;
+}
+
+.head{
+	text-transform: uppercase;
+	font-weight: bold;
+
+}
