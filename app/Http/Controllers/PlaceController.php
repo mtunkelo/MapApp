@@ -64,26 +64,26 @@ class PlaceController extends Controller
   }
 
 
-  public function update(Request $request)
-  {
-
-    $place = Place::where('id', '=', $request->id)->first();
-    if($place)
-    {
-      $place->title = $request->get('title');
-      $place->description = $request->get('description');
-      $place->open_hours = $request->get('open_hours');
-      $place->lat = $request->get('lat');
-      $place->lng = $request->get('lng');
-      $place->favorite = $request->get('favorite');
-      $place->save();
-      return response()->make('Nyt on päivitetty');
-
-    } else
-    {
-      return response()->make('error', 400);
-    }
-  }
+  // public function update(Request $request)
+  // {
+  //
+  //   $place = Place::where('id', '=', $request->id)->first();
+  //   if($place)
+  //   {
+  //     $place->title = $request->get('title');
+  //     $place->description = $request->get('description');
+  //     $place->open_hours = $request->get('open_hours');
+  //     $place->lat = $request->get('lat');
+  //     $place->lng = $request->get('lng');
+  //     $place->favorite = $request->get('favorite');
+  //     $place->save();
+  //     return response()->make('Nyt on päivitetty');
+  //
+  //   } else
+  //   {
+  //     return response()->make('error', 400);
+  //   }
+  // }
 
   public function delete($id = null){
 

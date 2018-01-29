@@ -5,7 +5,7 @@ function getPlaces() {
     console.log(result);
     var items = [];
     $.each(result, function(i, field){
-      items.push("<li class='list-group-item justify-content-between place'> <span class='glyphicon glyphicon-map-marker'></span> " + result[i].title + "<input type='hidden' name='placeid' value='" + result[i].id +"'/> <input type='hidden' name='lat' value='" + result[i].lat +"'/> <input type='hidden' name='lng' value='" + result[i].lng +"'/> <button type='button' class='btn btn-basic btn-md delete'><span class='glyphicon glyphicon-trash'></span></button> <button type='button' data-toggle='modal' data-target='#myModal' class='btn btn-basic btn-md change'><span class='glyphicon glyphicon-pencil'></span></button><br> <span class='glyphicon glyphicon-time'></span> " + result[i].open_hours + "<br /> <span class='glyphicon glyphicon-info-sign'></span> " + result[i].description + "<br /> </li>");
+      items.push("<li class='list-group-item justify-content-between place'> <span class='glyphicon glyphicon-map-marker'></span> " + result[i].title + "<input type='hidden' name='placeid' value='" + result[i].id +"'/> <input type='hidden' name='lat' value='" + result[i].lat +"'/> <input type='hidden' name='lng' value='" + result[i].lng +"'/> <button type='button' class='btn btn-basic btn-md delete'><span class='glyphicon glyphicon-trash'></span></button> <br> <span class='glyphicon glyphicon-time'></span> " + result[i].open_hours + "<br /> <span class='glyphicon glyphicon-info-sign'></span> " + result[i].description + "<br /> </li>");
     });
 
     $( "<div>", {
@@ -86,43 +86,43 @@ $(".submit").click(function(e){
   });
 });
 
-$(document).on('click', '.update', function()
-{
-  var currentPlace = $(this).closest('.modal-body');
-  console.log("Haluat päivittää tiedot");
-  var id = $("input[name=id]").val();
-  var title = $("input[name=title]").val();
-  var description = $("input[name=description]").val();
-  var lat = $("input[name=lat]").val();
-  var lng = $("input[name=lng]").val();
-  var open_hours = $("input[name=open_hours]").val();
-  var favorite = $("input:checked").val();
-  var token = $('input[name=token]').val();
-
-  $.ajax({
-    url: '/update',
-    data: {_token: token, id:id, title: title, description: description, open_hours: open_hours, lat: lat, lng: lng, favorite: favorite},
-    type: 'POST',
-    cache: false,
-    dataType: 'html',
-    success:function(data)
-    {
-      console.log("Päivitetty");
-      // $( ".list" ).empty();
-      // // Load list again
-      // getPlaces();
-      // initMap();
-      //window.location.href=window.location.href;
-      //  $('#favorite').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
-
-    },
-    error:(function()
-    {
-      // Show alert, if something else went wrong
-      alert('Nyt joku meni pieleen');
-    })
-  });
-});
+// $(document).on('click', '.update', function()
+// {
+//   var currentPlace = $(this).closest('.modal-body');
+//   console.log("Haluat päivittää tiedot");
+//   var id = $("input[name=id]").val();
+//   var title = $("input[name=title]").val();
+//   var description = $("input[name=description]").val();
+//   var lat = $("input[name=lat]").val();
+//   var lng = $("input[name=lng]").val();
+//   var open_hours = $("input[name=open_hours]").val();
+//   var favorite = $("input:checked").val();
+//   var token = $('input[name=token]').val();
+//
+//   $.ajax({
+//     url: '/update',
+//     data: {_token: token, id:id, title: title, description: description, open_hours: open_hours, lat: lat, lng: lng, favorite: favorite},
+//     type: 'POST',
+//     cache: false,
+//     dataType: 'html',
+//     success:function(data)
+//     {
+//       console.log("Päivitetty");
+//       // $( ".list" ).empty();
+//       // // Load list again
+//       // getPlaces();
+//       // initMap();
+//       //window.location.href=window.location.href;
+//       //  $('#favorite').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+//
+//     },
+//     error:(function()
+//     {
+//       // Show alert, if something else went wrong
+//       alert('Nyt joku meni pieleen');
+//     })
+//   });
+// });
 
 
 //Function for deletig place (one at time)
