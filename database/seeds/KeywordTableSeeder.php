@@ -12,14 +12,5 @@ class KeywordTableSeeder extends Seeder
   		$keyword = new Keyword();
         $keyword->label = 'Ravintola';
 		    $keyword->save();
-
-				$keyword = new Keyword();
-				$keyword->label = 'Nähtävyys';
-				$keyword->save();
-
-				$keyword = new Keyword();
-				$keyword->label = 'Elämys';
-				$keyword->save();
-
     }
 }
