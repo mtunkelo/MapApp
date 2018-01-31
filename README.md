@@ -6,7 +6,7 @@ $ composer update
 
 $ cd .env.example .env
 
-$ php artisan key:generate
+$ php artisan key:generate  
 $ php artisan config:clear
 
 Remember to set db connections
