@@ -23,7 +23,8 @@ Route::get('/', function() {
 
 
 Route::get('/places', 'PlaceController@all');
-Route::get('/keywords', 'PlaceController@allKeywords');
+Route::get('/keywords', 'KeywordController@allKeywords');
+
 Route::get('/search', 'PlaceController@search');
 
 Route::get('/places/{id}', 'PlaceController@show');
@@ -32,3 +33,4 @@ Route::delete('/remove/{id?}', 'PlaceController@delete');
 Route::post('/update}', 'PlaceController@update');
 
 Route::post('create', 'PlaceController@store');
+Route::post('/keyword/create', 'KeywordController@store');

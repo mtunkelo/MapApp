@@ -86,6 +86,28 @@ $(".submit").click(function(e){
   });
 });
 
+$(".addKeyword").click(function(e){
+  e.preventDefault();
+  // Lets make variables to all inputs, to get values
+  var label = $("input[name=label]").val();
+  $.ajax({
+    type:'POST',
+    url:'/keyword/create',
+    data: {label:label},
+    success:function(data){
+      $('#addKeywordModal').modal('toggle');
+      $( ".keyword" ).empty();
+      getKeywords();
+    },
+    error:(function(data)
+    {
+      console.log(data);
+      // Show alert, if something went wrong
+      alert('Nyt joku meni pieleen');
+    })
+  });
+});
+
 // $(document).on('click', '.update', function()
 // {
 //   var currentPlace = $(this).closest('.modal-body');
@@ -115,13 +137,13 @@ $(".submit").click(function(e){
 //       //window.location.href=window.location.href;
 //       //  $('#favorite').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
 //
-//     },
+//      },
 //     error:(function()
 //     {
-//       // Show alert, if something else went wrong
+//       // Show alert, if something went wrong
 //       alert('Nyt joku meni pieleen');
 //     })
-//   });
+//  });
 // });
 
 

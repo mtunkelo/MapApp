@@ -110,10 +110,4 @@ class PlaceController extends Controller
 
   }
 
-  public function allKeywords()
-  {
-    $keywords = Keyword::all();
-    return json_encode(Keyword::all());
-  }
-
 }
