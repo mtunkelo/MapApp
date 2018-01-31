@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
     {
       $this->call(PlaceTableSeeder::class);
       $this->call(KeywordTableSeeder::class);
-      $this->call(PlaceKeywordTableSeeder::class);
 
     }
 }
