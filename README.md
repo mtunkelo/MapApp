@@ -1,6 +1,11 @@
 # Places
 
+Tämä kloonaa projektin kyseiseen hakemistoon missä olet:
 git clone https://github.com/mtunkelo/MapApp.git
+
+
+Tämä kloonaa projektin MapApp hakemistoon:
+git clone https://github.com/mtunkelo/MapApp.git MapApp
 
 $ composer update
 
